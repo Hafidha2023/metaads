@@ -496,20 +496,70 @@
     footer a { color: rgba(255,255,255,.6); text-decoration: none; margin: 0 12px; }
     footer a:hover { color: var(--green-bright); }
 
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVE TABLETTE ── */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding: 80px 24px 40px; text-align: center; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 70px 20px 40px;
+        text-align: center;
+        min-height: auto;
+      }
       .hero-stats { justify-content: center; }
-      .hero-ctas { justify-content: center; }
-      .hero-visual { display: none; }
+      .hero-ctas { justify-content: center; flex-direction: column; align-items: center; }
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+      }
+      .hero-photo-wrap { width: 260px; height: 320px; }
+      .hero-photo-bg { width: 220px; height: 280px; }
+      .hero-photo-card { width: 200px; height: 270px; }
+      .hero-badge-float.float-1 { right: -5px; top: 20px; padding: 8px 12px; }
+      .hero-badge-float.float-2 { left: -5px; bottom: 50px; padding: 8px 12px; }
+      .float-icon { width: 28px; height: 28px; font-size: 14px; }
+      .float-text strong { font-size: 12px; }
+      .float-text span { font-size: 10px; }
       .pain-grid { grid-template-columns: 1fr; }
       .modules-grid { grid-template-columns: 1fr; }
       .trainer-inner { grid-template-columns: 1fr; }
       .forwho-grid { grid-template-columns: 1fr; }
       .pricing-cards { grid-template-columns: 1fr; }
       nav { padding: 14px 20px; }
-      section { padding: 72px 24px; }
-      .section-wrap, .trainer-wrap, .pain-wrap, .program-wrap, .pricing-wrap, .cta-wrap { padding: 72px 24px; }
+      section { padding: 60px 20px; }
+      .section-wrap, .trainer-wrap, .pain-wrap, .program-wrap, .pricing-wrap, .cta-wrap { padding: 60px 20px; }
+      .trust-strip { gap: 16px; padding: 16px 20px; flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ── RESPONSIVE MOBILE ── */
+    @media (max-width: 900px) {
+      .testi-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 480px) {
+      .hero {
+        padding: 64px 16px 32px;
+        gap: 24px;
+      }
+      .hero h1 { font-size: 30px; line-height: 1.15; }
+      .hero-sub { font-size: 15px; }
+      .hero-badge { font-size: 11px; padding: 5px 12px; }
+      .hero-stats { gap: 16px; }
+      .stat strong { font-size: 24px; }
+      .btn-primary { padding: 14px 24px; font-size: 14px; width: 100%; justify-content: center; }
+      .btn-ghost { padding: 13px 20px; font-size: 13px; width: 100%; text-align: center; }
+      .hero-photo-wrap { width: 220px; height: 280px; }
+      .hero-photo-bg { width: 180px; height: 240px; }
+      .hero-photo-card { width: 170px; height: 235px; border-radius: 85px 85px 16px 16px; }
+      .hero-badge-float { padding: 7px 10px; border-radius: 12px; }
+      .hero-badge-float.float-1 { right: 0; top: 10px; }
+      .hero-badge-float.float-2 { left: 0; bottom: 30px; }
+      .float-icon { display: none; }
+      .float-text strong { font-size: 11px; }
+      .float-text span { display: none; }
+      nav { padding: 12px 16px; }
+      .nav-logo { font-size: 15px; }
+      .nav-cta { padding: 8px 16px; font-size: 12px; }
+      .section-title { font-size: 24px; }
+      .trust-item { font-size: 12px; }
     }
 
     /* Animations */
@@ -805,9 +855,11 @@
       <a href="https://forms.gle/yvkebdkdhhFzpCwH8" target="_blank" class="btn-price gold">Réserver — VIP →</a>
     </div>
   </div>
-  <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--ink-muted);">
-    🏦 Paiement par virement bancaire au nom de <strong>Media Marketing Agency</strong> · 📞 Infos : WhatsApp
-  </p>
+  <div style="text-align:center;margin-top:24px;background:#eff6ff;border:2px solid #2563eb;border-radius:14px;padding:16px 24px;max-width:600px;margin-left:auto;margin-right:auto;">
+    <p style="font-size:15px;font-weight:800;color:#1e3a5f;margin-bottom:4px;">🏦 Mode de paiement</p>
+    <p style="font-size:15px;font-weight:700;color:#2563eb;">Virement bancaire au nom de <span style="color:#1e3a5f;">Media Marketing Agency</span></p>
+    <p style="font-size:13px;color:#64748b;margin-top:6px;">📞 Coordonnées bancaires communiquées après inscription · WhatsApp disponible</p>
+  </div>
 </div>
 
 <!-- FAQ -->
@@ -872,6 +924,59 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<div style="background:#f0f7ff;padding:80px 40px;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <span class="section-label">⭐ Ils ont suivi la formation</span>
+    <h2 class="section-title">Ce que disent nos participants</h2>
+  </div>
+  <div style="max-width:1100px;margin:40px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="testi-grid">
+
+    <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(37,99,235,.08);border:1px solid #dbeafe;">
+      <div style="display:flex;gap:4px;margin-bottom:16px;">
+        <span style="color:#f59e0b;font-size:18px;">★★★★★</span>
+      </div>
+      <p style="font-size:15px;color:#334155;line-height:1.7;font-style:italic;margin-bottom:20px;">"Une formation exceptionnelle ! Mme Hafidha maîtrise parfaitement son sujet et sait transmettre avec clarté. Après ces sessions, j'ai totalement revu ma stratégie Meta Ads. Merci infiniment !"</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#38bdf8);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;">A</div>
+        <div>
+          <strong style="display:block;font-size:15px;color:#1e3a5f;">Ahmed Goubeh</strong>
+          <span style="font-size:12px;color:#64748b;">Entrepreneur · Participant</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#1e3a5f;border-radius:20px;padding:28px;box-shadow:0 8px 32px rgba(30,58,95,.25);">
+      <div style="display:flex;gap:4px;margin-bottom:16px;">
+        <span style="color:#f59e0b;font-size:18px;">★★★★★</span>
+      </div>
+      <p style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.7;font-style:italic;margin-bottom:20px;">"Bravo Mme Hafidha ! Votre pédagogie est remarquable. J'ai appris en 25h ce que je n'arrivais pas à comprendre en plusieurs mois seul. Une vraie valeur ajoutée pour mon business !"</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#fbbf24);display:flex;align-items:center;justify-content:center;color:#1e3a5f;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;">R</div>
+        <div>
+          <strong style="display:block;font-size:15px;color:#fff;">Rabeh Gharsallah</strong>
+          <span style="font-size:12px;color:rgba(255,255,255,.5);">Marketeur Digital · Participant</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(37,99,235,.08);border:1px solid #dbeafe;">
+      <div style="display:flex;gap:4px;margin-bottom:16px;">
+        <span style="color:#f59e0b;font-size:18px;">★★★★★</span>
+      </div>
+      <p style="font-size:15px;color:#334155;line-height:1.7;font-style:italic;margin-bottom:20px;">"Félicitations Mme Hafidha pour cette formation de qualité. Contenu concret, exemples pratiques et un suivi attentionné. Je recommande à tous ceux qui veulent vraiment maîtriser Meta Ads !"</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#38bdf8);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;">I</div>
+        <div>
+          <strong style="display:block;font-size:15px;color:#1e3a5f;">Imen Ammar</strong>
+          <span style="font-size:12px;color:#64748b;">Cheffe d'entreprise · Participante</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- CTA -->
 <div class="cta-wrap">
   <div class="cta-inner">
@@ -888,8 +993,16 @@
 
 <!-- FOOTER -->
 <footer>
-  <p style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:8px;">MMA · Media Marketing Agency</p>
-  <p style="margin-bottom:16px;">Fondée par Hafidha Najjar · Tunis, Tunisie</p>
+  <p style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;">MMA · Media Marketing Agency</p>
+  <div style="display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:16px;">
+    <a href="tel:+21626683949" style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:500;">
+      📞 +216 26 683 949
+    </a>
+    <a href="mailto:direction.mma@gmail.com" style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:500;">
+      ✉️ direction.mma@gmail.com
+    </a>
+    <span style="color:rgba(255,255,255,.5);font-size:14px;">📍 Tunis, Tunisie</span>
+  </div>
   <p>
     <a href="#">Politique de confidentialité</a>
     <a href="#">Conditions générales</a>
